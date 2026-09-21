@@ -1328,3 +1328,30 @@ ul { list-style: none; }
   .btn-cta-phone, .btn-cta-secondary { text-align: center; }
   .content-section { padding: 48px 0; }
 }
+
+
+/* ============================================
+   MOBILE STICKY CALL BAR (<=1024px only) - v2 compact, 2026-09-21
+   44px tall (Apple minimum tap target). Hidden on desktop.
+   ============================================ */
+.mobile-call-bar { display: none; }
+@media (max-width: 1024px) {
+  .mobile-call-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200;
+    background: #46803A; box-shadow: 0 -2px 10px rgba(0,0,0,0.18);
+  }
+  .mobile-call-bar a {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    height: 44px; padding: 0 16px;
+    font-family: var(--font-head); font-size: 17px; font-weight: 800; letter-spacing: 0.02em;
+    color: var(--white); text-decoration: none; border: none; white-space: nowrap;
+  }
+  .mobile-call-bar a:active { background: #3A6B30; }
+  .mobile-call-bar svg { width: 17px; height: 17px; flex-shrink: 0; }
+  /* keep the fixed bar from covering footer legal links */
+  footer,
+  .site-footer { padding-bottom: 60px; }
+}
+
+/* HEADER PHONE - v2: top-bar number must never wrap */
+.topbar-phone, .nav-phone { white-space: nowrap; }
